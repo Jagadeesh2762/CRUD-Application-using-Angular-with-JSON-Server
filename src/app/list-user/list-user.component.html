@@ -1,0 +1,29 @@
+<div class="container ">
+    <h3 class="text-center text-primary">List User</h3>
+    <input type="button" value="Add User" class="btn btn-secondary" routerLink="/add">
+    <table class="table my-3 table-striped shadow-lg">
+        <thead class="text-center">
+            <tr >
+                <th>S.No</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of ulist;let i=index"  class="text-center">
+                <td>{{i+1}}</td>
+                <td>{{u.id}}</td>
+                <td>{{u.name}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.phone}}</td>
+                <td>
+                    <span class="btn btn-warning btn-sm" [routerLink]="['/edit/:',{param1:u.id}]">Edit</span> &nbsp;
+                    <span class="btn btn-danger btn-sm" (click)="removeUser(u.id)">Delete</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

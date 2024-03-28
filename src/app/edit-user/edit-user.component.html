@@ -1,0 +1,23 @@
+<div class="container" style="max-width:300px">
+  <div class="row p-3 my-5 bg-light shadow-lg ">
+    <h3 class="text-primary text-center">Edit User</h3>
+    <form (ngSubmit)="updateInfo()">
+        <p>
+            <label>Name</label>
+            <input type="text" value="" class="form-control" [(ngModel)]="user.name" [ngModelOptions]="{standalone:true}">
+        </p>
+        <p>
+            <label>Email</label>
+            <input type="text" value="" class="form-control" id="email" [(ngModel)]="user.email" [ngModelOptions]="{standalone:true}">
+        </p>
+        <p>
+            <label>Phone</label>
+            <input type="text" value="" class="form-control" id="phone" [(ngModel)]="user.phone" [ngModelOptions]="{standalone:true}">
+        </p>
+        <p>
+            <input type="submit" value="Update" class="btn btn-primary" > &nbsp;
+            <input type="button" value="Back" class="btn btn-success" routerLink="/list">
+        </p>
+    </form>
+  </div>
+</div>
